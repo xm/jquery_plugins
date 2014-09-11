@@ -1,0 +1,19 @@
+div.thumbnails {
+    margin: 50px auto;
+    
+    width: 500px;
+    height: 500px;
+    
+    border: 1px solid black;
+}
+
+div.thumbnails > div.items img {
+    width: 100%;
+    height: 100%;
+    
+    display: none;
+}
+
+div.thumbnails > div.items img.active {
+    display: block;
+}

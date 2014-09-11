@@ -6,12 +6,35 @@
     <link rel="stylesheet" href="thumbnail.css"></link>
   </head>
 
-  <body>      
+  <body>
+      <div class="thumbnails">
+          <div class="items">
+              <img src="images/db-low.png">
+              <img src="images/dp-alive.png">
+              <img src="images/dp-discovery.png">
+              <img src="images/dp-ram.png">
+              <img src="images/kl-gkmc.png">
+              <img src="images/kl-s80.png">
+              <img src="images/kw-cd.png">
+              <img src="images/kw-lr.png">
+              <img src="images/kw-mbdtf.png">
+              <img src="images/kw-yeezus.png">
+              <img src="images/mbv-mbv.png">
+              <img src="images/mc-bangerz.png">
+              <img src="images/sg-ts.png">
+              <img src="images/tc-porn.png">
+              <img src="images/ts-fearless.png">
+              
+          </div>
+      </div>
+      
       <script src="../jquery-2.1.1.js"></script>
       <script src="./thumbnail.js"></script>
       
       <script>
-      
+          $(function () {
+              $('.thumbnails').thumbnails();
+          });
       </script>
   </body>
 </html>
