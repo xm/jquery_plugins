@@ -6,6 +6,13 @@ div.tab-pane {
     display: none;
 }
 
-div.tab-pane.active {
+div.tab-pane.active, div.tab-pane.transitioning {
     display: block;
+    
+    opacity: 1.0;
+    transition: opacity 0.1s ease-in-out;
+}
+
+div.tab-pane.transitioning {
+    opacity: 0.0;
 }

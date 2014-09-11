@@ -11,14 +11,29 @@ $.Tabs = function (el) {
 $.Tabs.prototype.clickTab = function (event) {
     event.preventDefault();
     
-    this.$contentTabs.children().removeClass('active');
+    if (this.$activeTab.hasClass('transitioning')) {
+        return;
+    }
+    
+    this.$activeTab.removeClass('active');
+    this.$activeTab.addClass('transitioning');
+    
+    this.$activeTab.one('transitionend', function (event) {    
+        $(event.currentTarget).removeClass('transitioning');
+        this.$activeTab.addClass('transitioning');
+       
+        setTimeout(function () {
+            this.$activeTab.removeClass('transitioning');
+            this.$activeTab.addClass('active');
+        }.bind(this), 0);
+     }.bind(this));
+
     $('.tabs a').removeClass('active');
     
     var $tabLink = $(event.currentTarget);
     $tabLink.addClass('active');
     
-    var $tab = $(this.$contentTabs.find($tabLink.attr("href")));
-    $tab.addClass('active');
+    this.$activeTab = $(this.$contentTabs.find($tabLink.attr("href")));
 };
 
 $.fn.tabs = function () {
