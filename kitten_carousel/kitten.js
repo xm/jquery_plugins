@@ -2,7 +2,7 @@ $.Carousel = function (el) {
     this.$el = $(el);
     
     this.$images = this.$el.find('.items img');
-    this.$activeIndex = 0;
+    this.activeIndex = 0;
     
     $(this.activeImage()).addClass('active');
     
@@ -18,7 +18,7 @@ $.Carousel.prototype.bindEvents = function () {
 };
 
 $.Carousel.prototype.activeImage = function () {
-    return this.$images[this.$activeIndex];
+    return this.$images[this.activeIndex];
 };
 
 $.Carousel.prototype._directionToString = function (direction) {
@@ -32,8 +32,8 @@ $.Carousel.prototype.slide = function (direction) {
         return;
     }
     
-    this.$activeIndex += direction + this.$images.length;
-    this.$activeIndex %= this.$images.length;   
+    this.activeIndex += direction + this.$images.length;
+    this.activeIndex %= this.$images.length;   
     
     var $nextImage = $(this.activeImage()); 
     
