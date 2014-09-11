@@ -7,7 +7,29 @@
   </head>
 
   <body>
-      <ul class="tabs"></ul>
+      <ul class="tabs" data-content-tabs="content-tabs">
+          <li><a href="#chihuahua" class="active">Chihuahua</a></li>
+          <li><a href="#dachshund">Dachshund</a></li>
+          <li><a href="#shiba">Shiba</a></li>
+      </ul>
+      
+      <div class="content-tabs">
+          <div class="tab-pane active" id="chihuahua">
+              <p>
+                 The Chihuahua has a terrier-like personality which means he's cocky, confident, feisty, quick-to-bark, relentless, and rash. He's the smallest of all dog breeds. He eats very little and takes up very little space.
+              </p>
+          </div>
+          <div class="tab-pane" id="dachshund">
+              <p>
+                  The Dachshund is fearless, brave, rash, playful, determined and clever. He's quite independent and stubborn because he was bred to hunt alone. He can be quite bossy and will take over the house if you let him.
+              </p>
+          </div>
+          <div class="tab-pane" id="shiba">
+              <p>
+                  The Shiba Inu is a unique breed. Intelligent, active, energetic, they think pretty highly of themselves. They are famous for their spirited boldness and independent nature. If you are not careful, they will train you.
+              </p>
+          </div>
+      </div>
       
       <script src="../jquery-2.1.1.js"></script>
       <script src="./tabs.js"></script>
