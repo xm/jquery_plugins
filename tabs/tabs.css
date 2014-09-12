@@ -1,5 +1,48 @@
-a.active {
+body {
+  font-family: Arial, sans-serif;
+  font-size: 12pt;
+  letter-spacing: 1px;
+}
+
+ul.tabs::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+ul.tabs > li a {
+  display: block;
+
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid black;
+
+  margin: 1px;
+  padding: 10px;
+
+  float: left;
+
+  text-decoration: none;
+}
+
+ul.tabs > li a:not(.active):hover {
+    background-color: rgba(0, 127, 0, 0.2);
+}
+
+ul.tabs > li a.active {
+    background-color: rgba(0, 127, 0, 0.4);
     font-weight: bold;
+}
+
+div.content-tabs {
+    margin: 1px; 
+    padding: 10px;
+    
+    width: 500px;
+
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid black;
+
+    line-height: 2em;
 }
 
 div.tab-pane {
