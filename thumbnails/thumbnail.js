@@ -147,10 +147,10 @@ $.Thumbnails.prototype.moveGutterStart = function (direction) {
     var newIndex = this.imageOffset + direction;
     
     if (newIndex >= 0 && newIndex <= this.$images.length - 5) {
-        this.activeThumbIndex -= direction;
-        this.activeImageIndex -= direction;
-        
         this.setGutterStart(newIndex);
+
+        this.setActiveThumb(this.activeThumbIndex - direction);
+        this.setActiveImage(this.activeImageIndex - direction);
     }
 };
 
