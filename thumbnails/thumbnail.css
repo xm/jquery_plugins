@@ -1,5 +1,5 @@
 div.thumbnails {
-    margin: 0 auto;
+    margin: 10px auto;
     
     width: 500px;
     height: 500px;
@@ -23,7 +23,7 @@ div.thumbnails > div.items img.active {
 }
 
 div.thumbnails > div.imageNav {
-    margin-top: 50px;
+    margin-top: 10px;
 }
 
 div.thumbnails > div.imageNav::after {
