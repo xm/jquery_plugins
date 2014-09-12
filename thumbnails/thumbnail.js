@@ -3,8 +3,11 @@ $.Thumbnails = function (el) {
     this.$images = this.$el.find('.items img');
     this.$imageNav = this.buildImageNav();
     
-    this.startThumbIndex = 0;
+    this.activeThumbIndex = 0;
+    this.activeImageIndex = 0;    
     this.tempImageIndex = null;
+    
+    this.imageOffset = 0;
     
     this.fillGutter();
     this.setActiveImage(0);
@@ -103,7 +106,7 @@ $.Thumbnails.prototype.fillGutter = function () {
         $thumb.attr("data-index", i);
         $thumb.attr(
             "src",
-            $(this.$images[this.startThumbIndex + i]).attr("src")
+            $(this.$images[this.imageOffset + i]).attr("src")
         );
         
         $li.append($thumb);
@@ -112,11 +115,11 @@ $.Thumbnails.prototype.fillGutter = function () {
 };
 
 $.Thumbnails.prototype.getActiveImage = function () {
-    return this.$images[this.activeImageIndex];
+    return this.$images[this.imageOffset + this.activeImageIndex];
 };
 
 $.Thumbnails.prototype.getTempImage = function () {
-    return this.$images[this.tempImageIndex];
+    return this.$images[this.imageOffset + this.tempImageIndex];
 };
 
 $.Thumbnails.prototype.getActiveThumb = function () {
@@ -125,7 +128,7 @@ $.Thumbnails.prototype.getActiveThumb = function () {
 
 $.Thumbnails.prototype.setActiveImage = function (index) {
     $(this.getActiveImage()).removeClass('active');
-    this.activeImageIndex = this.startThumbIndex + index;
+    this.activeImageIndex = index;
     $(this.getActiveImage()).addClass('active');
 };
 
@@ -136,11 +139,19 @@ $.Thumbnails.prototype.setActiveThumb = function (index) {
 };
 
 $.Thumbnails.prototype.setGutterStart = function (index) {
-    
+    this.imageOffset = index;
+    this.fillGutter();
 };
 
 $.Thumbnails.prototype.moveGutterStart = function (direction) {
+    var newIndex = this.imageOffset + direction;
     
+    if (newIndex >= 0 && newIndex <= this.$images.length - 5) {
+        this.activeThumbIndex -= direction;
+        this.activeImageIndex -= direction;
+        
+        this.setGutterStart(newIndex);
+    }
 };
 
 $.fn.thumbnails = function () {
