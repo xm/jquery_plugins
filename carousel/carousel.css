@@ -2,7 +2,7 @@ div.carousel {
     width: 800px;
     height: 500px;
     
-    margin: 10px auto;
+    margin: 10px auto 50px;
 }
 
 div.carousel > div.items {
@@ -37,4 +37,19 @@ div.carousel > div.items > img.active.left {
 
 div.carousel > div.items > img.active.right {
     left: 100%;
+}
+
+div.carousel > a.slide-left, div.carousel > a.slide-right {
+  display: block;
+  margin-top: 10px;
+
+  text-decoration: none;
+}
+
+div.carousel > a.slide-left {
+  float: left;
+}
+
+div.carousel > a.slide-right {
+  float: right;
 }

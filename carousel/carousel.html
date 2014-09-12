@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Cool Kitten Website</title>
+    <title>Carousel Demo</title>
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.17.2/build/cssreset/cssreset-min.css">
-    <link rel="stylesheet" href="kitten.css"></link>
+    <link rel="stylesheet" href="carousel.css">
   </head>
 
   <body>  
-      <div class="carousel">
+      <div id="kitty-carousel" class="carousel">
           <div class="items">
-              <img src="http://placekitten.com/g/800/500">
-              <img src="http://placekitten.com/g/800/500">
-              <img src="http://placekitten.com/g/800/5a00">
+              <img src="http://placekitten.com/g/800/500" alt="Kitty">
+              <img src="http://placekitten.com/g/900/600" alt="Kitty">
+              <img src="http://placekitten.com/g/900/800" alt="Kitty">
           </div>
           <a class="slide-left" href="#">Previous</a>
           <a class="slide-right" href="#">Next</a>
       </div>
-      
+
       <script src="../jquery-2.1.1.js"></script>
-      <script src="./kitten.js"></script>
+      <script src="./carousel.js"></script>
       
       <script>
           $(function () {
-             $(".carousel").carousel(); 
+             $("#kitty-carousel").carousel(); 
           });
       </script>
   </body>
